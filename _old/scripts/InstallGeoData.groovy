@@ -16,7 +16,7 @@
  */
 
 /**
- * @author <a href='mailto:donbeave@gmail.com'>Alexey Zhokhov</a>
+ * @author <ahref='mailto:donbeave@gmail.com' > Alexey Zhokhov</a>
  */
 includeTargets << grailsScript('_GrailsEvents')
 includeTargets << grailsScript('_GrailsBootstrap')

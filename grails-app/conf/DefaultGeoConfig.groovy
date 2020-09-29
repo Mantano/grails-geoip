@@ -18,7 +18,7 @@
 import com.maxmind.geoip.LookupService
 
 /**
- * @author <a href='mailto:donbeave@gmail.com'>Alexey Zhokhov</a>
+ * @author <ahref='mailto:donbeave@gmail.com'  >  Alexey Zhokhov</a>
  */
 geoip {
     active = true

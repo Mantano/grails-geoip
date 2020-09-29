@@ -16,17 +16,16 @@
  */
 package grails.plugins.geoip
 
+import com.maxmind.geoip.LookupService
 import grails.core.GrailsApplication
 import grails.plugins.Plugin
-
-import com.maxmind.geoip.LookupService
 import grails.util.Environment
 import grails.util.Holders
 import groovy.util.logging.Commons
 
 /**
  * @author Radu Andrei Tanasa
- * @author <a href='mailto:donbeave@gmail.com'>Alexey Zhokhov</a>
+ * @author <ahref='mailto:donbeave@gmail.com'  >  Alexey Zhokhov</a>
  */
 @Commons
 class GeoipGrailsPlugin extends Plugin {
@@ -112,7 +111,7 @@ This product includes GeoLite data created by MaxMind, available from
         }
     }
 
-    void onChange(Map<String, Object> event) {
+    void onChange( Map<String, Object> event ) {
         def conf = grailsApplication.config.grails.plugin.geoip
 
         if (!conf || !conf.active) {
@@ -125,7 +124,7 @@ This product includes GeoLite data created by MaxMind, available from
     }
 
     // Get a configuration instance
-    private getConfiguration(GrailsApplication application) {
+    private getConfiguration( GrailsApplication application ) {
         def config = application.config
 
         // try to load it from class file and merge into GrailsApplication#config
@@ -175,7 +174,7 @@ This product includes GeoLite data created by MaxMind, available from
         return config
     }
 
-    private void addDynamicMethods(klass) {
+    private void addDynamicMethods( klass ) {
         klass.metaClass.withLocation = { Closure closure ->
             def geoIpService = Holders.applicationContext.geoIpService
             closure.call geoIpService.getLocation(geoIpService.getIpAddress(request))

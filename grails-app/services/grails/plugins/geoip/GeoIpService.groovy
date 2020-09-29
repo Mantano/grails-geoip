@@ -22,7 +22,7 @@ import com.maxmind.geoip.Location
  * Service for determining a geographical location based on an IP. 
  *
  * @author Radu Andrei Tanasa
- * @author <a href='mailto:donbeave@gmail.com'>Alexey Zhokhov</a>
+ * @author <ahref='mailto:donbeave@gmail.com'  >  Alexey Zhokhov</a>
  */
 public class GeoIpService {
 
@@ -36,11 +36,11 @@ public class GeoIpService {
                                      'rlnclientipaddr']
     def geoLookupService
 
-    def getLocation(def ip) {
+    def getLocation( def ip ) {
         geoLookupService.getLocation(ip)
     }
 
-    String getIpAddress(request) {
+    String getIpAddress( request ) {
         String unknown = 'unknown'
         String ipAddress = unknown
 
@@ -55,7 +55,7 @@ public class GeoIpService {
         return ipAddress
     }
 
-    boolean isInCountry(Location location, String countryCode) {
+    boolean isInCountry( Location location, String countryCode ) {
         location.countryCode?.equals(countryCode)
     }
 
