@@ -7,7 +7,7 @@ buildscript {
         maven { url 'https://repo.grails.org/grails/core' }
     }
     dependencies {
-        classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+        classpath "org.apache.grails:grails-gradle-plugins:$grailsVersion"
     }
 }
 
@@ -20,9 +20,9 @@ group 'org.grails.plugins'
 
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'org.grails.grails-plugin'
+apply plugin: 'org.apache.grails.gradle.grails-plugin'
 //apply plugin: 'org.grails.grails-plugin-publish'
-apply plugin: 'org.grails.grails-gsp'
+apply plugin: 'org.apache.grails.gradle.grails-gsp'
 
 ext {
     grailsVersion = project.grailsVersion
@@ -46,17 +46,16 @@ dependencies {
     // Grails deps
     implementation 'org.springframework.boot:spring-boot-starter-logging'
     implementation 'org.springframework.boot:spring-boot-autoconfigure'
-    implementation 'org.grails:grails-core'
+    implementation 'org.apache.grails:grails-core'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-tomcat'
-    implementation 'org.grails:grails-dependencies'
-    implementation 'org.grails:grails-web-boot'
-    console 'org.grails:grails-console'
-    profile "org.grails.profiles:web-plugin:$grailsWebProfileVersion"
-    provided 'org.grails:grails-plugin-services'
-    provided 'org.grails:grails-plugin-domain-class'
-    testImplementation 'org.grails:grails-plugin-testing'
-    testImplementation 'org.grails.plugins:geb'
+    implementation 'org.apache.grails:grails-dependencies-starter-web'
+    implementation 'org.apache.grails:grails-web-boot'
+    console 'org.apache.grails:grails-console'
+    compileOnly 'org.apache.grails:grails-services'
+    compileOnly 'org.apache.grails:grails-domain-class'
+    testImplementation 'org.apache.grails.testing:grails-testing-support-core'
+    testImplementation 'org.apache.grails.plugins:geb'
     testRuntimeOnly 'org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1'
     testRuntimeOnly 'net.sourceforge.htmlunit:htmlunit:2.18'
 
